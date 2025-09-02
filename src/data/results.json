@@ -1,0 +1,32 @@
+[
+  {
+    "resultId": "1",
+    "examId": "1",
+    "studentId": "1",
+    "subject": "Mathematics",
+    "marks": 85,
+    "maxMarks": 100,
+    "grade": "A",
+    "remarks": "Excellent performance"
+  },
+  {
+    "resultId": "2",
+    "examId": "1",
+    "studentId": "1",
+    "subject": "Science",
+    "marks": 78,
+    "maxMarks": 100,
+    "grade": "B+",
+    "remarks": "Good understanding"
+  },
+  {
+    "resultId": "3",
+    "examId": "1",
+    "studentId": "2",
+    "subject": "Mathematics",
+    "marks": 92,
+    "maxMarks": 100,
+    "grade": "A+",
+    "remarks": "Outstanding work"
+  }
+]

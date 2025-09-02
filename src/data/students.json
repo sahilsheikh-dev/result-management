@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "name": "Alice Johnson",
+    "rollNo": "10A001",
+    "classId": "10A",
+    "section": "A",
+    "subjectsEnrolled": ["Mathematics", "Science", "English", "History"]
+  },
+  {
+    "id": "2",
+    "name": "Bob Smith",
+    "rollNo": "10A002",
+    "classId": "10A",
+    "section": "A",
+    "subjectsEnrolled": ["Mathematics", "Science", "English", "History"]
+  },
+  {
+    "id": "3",
+    "name": "Carol Davis",
+    "rollNo": "10A003",
+    "classId": "10A",
+    "section": "A",
+    "subjectsEnrolled": ["Mathematics", "Science", "English", "History"]
+  },
+  {
+    "id": "4",
+    "name": "David Wilson",
+    "rollNo": "10B001",
+    "classId": "10B",
+    "section": "B",
+    "subjectsEnrolled": ["Mathematics", "Science", "English", "Geography"]
+  },
+  {
+    "id": "5",
+    "name": "Emma Brown",
+    "rollNo": "10B002",
+    "classId": "10B",
+    "section": "B",
+    "subjectsEnrolled": ["Mathematics", "Science", "English", "Geography"]
+  }
+]

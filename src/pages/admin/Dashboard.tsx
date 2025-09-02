@@ -1,0 +1,142 @@
+import React from 'react';
+import { Users, GraduationCap, BookOpen, FileText, BarChart3, TrendingUp } from 'lucide-react';
+import { useData } from '../../contexts/DataContext';
+
+const AdminDashboard: React.FC = () => {
+  const { teachers, students, classes, exams, results } = useData();
+
+  const stats = [
+    {
+      title: 'Total Teachers',
+      value: teachers.length,
+      icon: Users,
+      color: 'bg-blue-500',
+      bgColor: 'bg-blue-50',
+      textColor: 'text-blue-700',
+    },
+    {
+      title: 'Total Students',
+      value: students.length,
+      icon: GraduationCap,
+      color: 'bg-emerald-500',
+      bgColor: 'bg-emerald-50',
+      textColor: 'text-emerald-700',
+    },
+    {
+      title: 'Active Classes',
+      value: classes.length,
+      icon: BookOpen,
+      color: 'bg-purple-500',
+      bgColor: 'bg-purple-50',
+      textColor: 'text-purple-700',
+    },
+    {
+      title: 'Total Exams',
+      value: exams.length,
+      icon: FileText,
+      color: 'bg-orange-500',
+      bgColor: 'bg-orange-50',
+      textColor: 'text-orange-700',
+    },
+  ];
+
+  const recentExams = exams.slice(0, 5);
+  const recentResults = results.slice(0, 5);
+
+  return (
+    <div className="space-y-8">
+      <div>
+        <h1 className="text-3xl font-bold text-gray-900 mb-2">Admin Dashboard</h1>
+        <p className="text-gray-600">Overview of your school management system</p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {stats.map((stat) => (
+          <div key={stat.title} className={`${stat.bgColor} rounded-xl p-6 border border-gray-100`}>
+            <div className="flex items-center justify-between">
+              <div>
+                <p className={`text-sm font-medium ${stat.textColor}`}>{stat.title}</p>
+                <p className="text-3xl font-bold text-gray-900 mt-2">{stat.value}</p>
+              </div>
+              <div className={`${stat.color} p-3 rounded-lg`}>
+                <stat.icon className="w-6 h-6 text-white" />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+          <div className="flex items-center gap-3 mb-6">
+            <FileText className="w-5 h-5 text-blue-600" />
+            <h2 className="text-lg font-semibold text-gray-900">Recent Exams</h2>
+          </div>
+          
+          <div className="space-y-4">
+            {recentExams.length > 0 ? (
+              recentExams.map((exam) => {
+                const examClass = classes.find(c => c.classId === exam.classId);
+                return (
+                  <div key={exam.examId} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                    <div>
+                      <h3 className="font-medium text-gray-900">{exam.examName}</h3>
+                      <p className="text-sm text-gray-600">
+                        {examClass?.className} - Section {examClass?.section}
+                      </p>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-sm font-medium text-gray-900">{exam.examType}</p>
+                      <p className="text-xs text-gray-500">{new Date(exam.date).toLocaleDateString()}</p>
+                    </div>
+                  </div>
+                );
+              })
+            ) : (
+              <p className="text-gray-500 text-center py-8">No exams scheduled</p>
+            )}
+          </div>
+        </div>
+
+        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+          <div className="flex items-center gap-3 mb-6">
+            <BarChart3 className="w-5 h-5 text-emerald-600" />
+            <h2 className="text-lg font-semibold text-gray-900">Recent Results</h2>
+          </div>
+          
+          <div className="space-y-4">
+            {recentResults.length > 0 ? (
+              recentResults.map((result) => {
+                const student = students.find(s => s.id === result.studentId);
+                const exam = exams.find(e => e.examId === result.examId);
+                return (
+                  <div key={result.resultId} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                    <div>
+                      <h3 className="font-medium text-gray-900">{student?.name}</h3>
+                      <p className="text-sm text-gray-600">{result.subject}</p>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-sm font-medium text-gray-900">{result.marks}/{result.maxMarks}</p>
+                      <span className={`inline-block px-2 py-1 rounded-full text-xs font-medium ${
+                        result.grade === 'A+' || result.grade === 'A' ? 'bg-green-100 text-green-800' :
+                        result.grade === 'B+' || result.grade === 'B' ? 'bg-blue-100 text-blue-800' :
+                        result.grade === 'C+' || result.grade === 'C' ? 'bg-yellow-100 text-yellow-800' :
+                        'bg-red-100 text-red-800'
+                      }`}>
+                        {result.grade}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })
+            ) : (
+              <p className="text-gray-500 text-center py-8">No results available</p>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default AdminDashboard;

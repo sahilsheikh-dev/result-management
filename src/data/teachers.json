@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1",
+    "name": "Dr. Sarah Johnson",
+    "email": "teacher@example.com",
+    "subject": "Mathematics",
+    "classAssigned": ["10A", "10B"]
+  },
+  {
+    "id": "2",
+    "name": "Prof. Michael Chen",
+    "email": "michael.chen@example.com",
+    "subject": "Science",
+    "classAssigned": ["9A", "10A"]
+  }
+]

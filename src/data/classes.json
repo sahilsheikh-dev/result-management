@@ -1,0 +1,20 @@
+[
+  {
+    "classId": "10A",
+    "className": "Grade 10",
+    "section": "A",
+    "subjects": ["Mathematics", "Science", "English", "History"]
+  },
+  {
+    "classId": "10B",
+    "className": "Grade 10",
+    "section": "B",
+    "subjects": ["Mathematics", "Science", "English", "Geography"]
+  },
+  {
+    "classId": "9A",
+    "className": "Grade 9",
+    "section": "A",
+    "subjects": ["Mathematics", "Science", "English", "Social Studies"]
+  }
+]

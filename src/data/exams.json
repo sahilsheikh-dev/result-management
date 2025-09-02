@@ -1,0 +1,26 @@
+[
+  {
+    "examId": "1",
+    "examName": "Mid-Term Examination",
+    "examType": "Written",
+    "classId": "10A",
+    "date": "2025-01-15",
+    "duration": "3 hours"
+  },
+  {
+    "examId": "2",
+    "examName": "Final Examination",
+    "examType": "Written",
+    "classId": "10A",
+    "date": "2025-03-20",
+    "duration": "3 hours"
+  },
+  {
+    "examId": "3",
+    "examName": "Mid-Term Examination",
+    "examType": "Written",
+    "classId": "10B",
+    "date": "2025-01-16",
+    "duration": "3 hours"
+  }
+]
