@@ -21,16 +21,22 @@ const Sidebar: React.FC = () => {
     { to: "/admin/students", icon: GraduationCap, label: "Manage Students" },
     { to: "/admin/classes", icon: BookOpen, label: "Manage Classes" },
     { to: "/admin/exams", icon: FileText, label: "Manage Exams" },
+    {
+      to: "/generate-results",
+      icon: ClipboardList,
+      label: "Generate Results",
+    },
+    { to: "/view-results", icon: BarChart3, label: "View Results" },
   ];
 
   const teacherNavItems = [
     { to: "/teacher", icon: Home, label: "Dashboard" },
     {
-      to: "/teacher/generate-results",
+      to: "/generate-results",
       icon: ClipboardList,
       label: "Generate Results",
     },
-    { to: "/teacher/view-results", icon: BarChart3, label: "View Results" },
+    { to: "/view-results", icon: BarChart3, label: "View Results" },
   ];
 
   const navItems = user?.role === "admin" ? adminNavItems : teacherNavItems;

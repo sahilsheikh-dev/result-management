@@ -165,7 +165,7 @@ const TeacherDashboard: React.FC = () => {
           <p className="text-blue-100 mb-4">
             Enter marks and evaluate student performance
           </p>
-          <NavLink to="/teacher/generate-results">
+          <NavLink to="/generate-results">
             <button className="bg-white text-blue-600 px-4 py-2 rounded-lg font-medium hover:bg-blue-50 transition-colors">
               Start Evaluation
             </button>
@@ -180,7 +180,7 @@ const TeacherDashboard: React.FC = () => {
           <p className="text-emerald-100 mb-4">
             Review and analyze student performance data
           </p>
-          <NavLink to="/teacher/view-results">
+          <NavLink to="/view-results">
             <button className="bg-white text-emerald-600 px-4 py-2 rounded-lg font-medium hover:bg-emerald-50 transition-colors">
               View Reports
             </button>
