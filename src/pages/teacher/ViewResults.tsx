@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Download, Eye, BarChart3, TrendingUp } from 'lucide-react';
 import { useData } from '../../contexts/DataContext';
-import { getGradeColor, calculatePercentage } from '../../utils/gradeCalculator';
+import { getGradeColor, calculatePercentage, calculateGrade } from '../../utils/gradeCalculator';
 import { generateReportCard } from '../../utils/pdfGenerator';
 
 const ViewResults: React.FC = () => {
