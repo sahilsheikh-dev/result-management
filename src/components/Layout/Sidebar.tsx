@@ -1,35 +1,39 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { 
-  Users, 
-  GraduationCap, 
-  BookOpen, 
-  FileText, 
-  BarChart3, 
+import React from "react";
+import { NavLink } from "react-router-dom";
+import {
+  Users,
+  GraduationCap,
+  BookOpen,
+  FileText,
+  BarChart3,
   ClipboardList,
   Home,
-  Settings
-} from 'lucide-react';
-import { useAuth } from '../../contexts/AuthContext';
+  Settings,
+} from "lucide-react";
+import { useAuth } from "../../contexts/AuthContext";
 
 const Sidebar: React.FC = () => {
   const { user } = useAuth();
 
   const adminNavItems = [
-    { to: '/admin', icon: Home, label: 'Dashboard' },
-    { to: '/admin/teachers', icon: Users, label: 'Manage Teachers' },
-    { to: '/admin/students', icon: GraduationCap, label: 'Manage Students' },
-    { to: '/admin/classes', icon: BookOpen, label: 'Manage Classes' },
-    { to: '/admin/exams', icon: FileText, label: 'Manage Exams' },
+    { to: "/admin", icon: Home, label: "Dashboard" },
+    { to: "/admin/teachers", icon: Users, label: "Manage Teachers" },
+    { to: "/admin/students", icon: GraduationCap, label: "Manage Students" },
+    { to: "/admin/classes", icon: BookOpen, label: "Manage Classes" },
+    { to: "/admin/exams", icon: FileText, label: "Manage Exams" },
   ];
 
   const teacherNavItems = [
-    { to: '/teacher', icon: Home, label: 'Dashboard' },
-    { to: '/teacher/generate-results', icon: ClipboardList, label: 'Generate Results' },
-    { to: '/teacher/view-results', icon: BarChart3, label: 'View Results' },
+    { to: "/teacher", icon: Home, label: "Dashboard" },
+    {
+      to: "/teacher/generate-results",
+      icon: ClipboardList,
+      label: "Generate Results",
+    },
+    { to: "/teacher/view-results", icon: BarChart3, label: "View Results" },
   ];
 
-  const navItems = user?.role === 'admin' ? adminNavItems : teacherNavItems;
+  const navItems = user?.role === "admin" ? adminNavItems : teacherNavItems;
 
   return (
     <aside className="bg-gray-900 text-white w-64 min-h-screen flex flex-col">
@@ -40,7 +44,9 @@ const Sidebar: React.FC = () => {
           </div>
           <div>
             <h2 className="font-bold text-lg">EduManage</h2>
-            <p className="text-gray-400 text-sm">{user?.role === 'admin' ? 'Admin Panel' : 'Teacher Panel'}</p>
+            <p className="text-gray-400 text-sm">
+              {user?.role === "admin" ? "Admin Panel" : "Teacher Panel"}
+            </p>
           </div>
         </div>
       </div>
@@ -53,8 +59,8 @@ const Sidebar: React.FC = () => {
             className={({ isActive }) =>
               `flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 ${
                 isActive
-                  ? 'bg-blue-600 text-white shadow-lg'
-                  : 'text-gray-300 hover:text-white hover:bg-gray-800'
+                  ? "bg-blue-600 text-white shadow-lg"
+                  : "text-gray-300 hover:text-white hover:bg-gray-800"
               }`
             }
           >
